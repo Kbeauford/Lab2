@@ -1,5 +1,6 @@
 using System;
 using Microsoft.AspNetCore.Mvc;
+using Fisher.Bookstore.Models;
 
 namespace Fisher.Bookstore.Controllers
 {
@@ -15,7 +16,16 @@ namespace Fisher.Bookstore.Controllers
         public IActionResult Featured()
         {
             //return Content("The Best Writer");
-            return View();
+            // return View();
+
+            // we would normally get this from a database
+            var featuredAuthor = new Author()
+                {
+                    AuthorId = 1,
+                    Name = "J.K. Rowling" //or pick your favorite
+                    
+                };
+                    return View(featuredAuthor);
         }
         
             
